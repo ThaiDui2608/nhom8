@@ -1,0 +1,48 @@
+/* pc */
+@media(min-width:1024px){
+
+}
+/* tablet */
+@media(min-width:740px)and (max-width: 1023px) {
+  
+  /* Contact */
+  .contact{
+    flex-direction: column;
+    align-items: center;
+}
+.contact .infomation{
+    margin-bottom: 30px;
+}
+.contact .sent{
+    margin-right: 120px;
+    margin-bottom: 30px;
+}
+.social{
+    margin-right: 200px;
+}
+}
+/*mobile */
+@media(max-width:740px){
+   
+    button{
+        margin-bottom: 20px;
+    }
+    .title-sub{
+        margin: 16px;
+    }
+    /* contact */
+    .contact{
+        flex-wrap: wrap;
+    }
+    .contact .infomation{
+        padding-left: 10px;
+    }
+    .contact .sent{
+        
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+  
+    
+
+}

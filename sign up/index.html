@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/font/themify-icons-font/themify-icons/themify-icons.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <title>SIGN UP</title>
+  </head>
+  <body>
+    <div class="decor">
+      <!-- slider -->
+      <div class="left fl-left">
+        <div class="slides">
+          <!-- start radio button -->
+          <input type="radio" name="radio-btn" id="radio1" />
+          <input type="radio" name="radio-btn" id="radio2" />
+          <input type="radio" name="radio-btn" id="radio3" />
+          <input type="radio" name="radio-btn" id="radio4" />
+          <!-- end radio button -->
+
+          <!-- slide image start -->
+          <div class="slide first">
+            <img src="./assets/img/1.png" alt="" />
+          </div>
+
+          <div class="slide">
+            <img src="./assets/img/2.jpg" alt="" />
+          </div>
+
+          <div class="slide">
+            <img src="./assets/img/3.png" alt="" />
+          </div>
+
+          <div class="slide">
+            <img src="./assets/img/4.png" alt="" />
+          </div>
+
+          <!-- slide image end -->
+
+          <!-- auto nav start -->
+          <div class="nav-auto">
+            <div class="auto-btn1"></div>
+            <div class="auto-btn2"></div>
+            <div class="auto-btn3"></div>
+            <div class="auto-btn4"></div>
+          </div>
+          <!-- auto nav end -->
+        </div>
+
+        <!-- manual nav start -->
+        <div class="nav-manual">
+          <label for="radio1" class="manual-btn"></label>
+          <label for="radio2" class="manual-btn"></label>
+          <label for="radio3" class="manual-btn"></label>
+          <label for="radio4" class="manual-btn"></label>
+        </div>
+        <!-- manual nav end -->
+      </div>
+
+      <!-- FORM -->
+      <div class="right fl-left">
+        <form name="myForm" id="myForm">
+          <h2>JOIN US NOW</h2>
+
+          <!-- <label for="username">Username</label> -->
+          <input type="text" id="username" placeholder="Username" required />
+
+          <!-- <label for="email">Email</label> -->
+          <input type="email" id="email" placeholder="Email" required />
+
+          <!-- <label for="password">Password</label> -->
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            onclick="checkUsername"
+          />
+          <!-- <label for="confirm-password">Confirm Password</label> -->
+          <input
+            type="password"
+            id="confirm-password"
+            placeholder="Confirm password here"
+            required
+          />
+          <div class="checkbox">
+            <input type="checkbox" name="agree" />
+            <label for="agree"
+              >I have read and agree to the
+              <a class="term" href="">terms</a></label
+            >
+          </div>
+          <p id="message"></p>
+          <div class="submit">
+            <button class="signin">SIGN UP</button>
+          </div>
+
+          <div class="move-to-login">
+            <h4>
+              Already have an account?
+              <a class="login" href="../login/login.html">Sign in</a>
+            </h4>
+          </div>
+
+          <div class="back">
+            <a
+              href="../home page/account/index_account.html"
+              class="ti-arrow-left"
+            >
+              Back to home page</a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    function validateForm() {
+      var username = document.getElementById("username").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      var confirm = document.getElementById("confirm-password").value;
+
+      if (username.length == 0) {
+        alert("Không được để trống");
+        return false;
+      } else if (username.length < 10) {
+        alert("Username must have at least 10 characters");
+        return false;
+      }
+
+      if (email.length == 0) {
+        alert("Email is empty");
+        return false;
+      }
+
+      if (password.length == 0) {
+        alert("Password is empty");
+        return false;
+      }
+
+      if (confirm.length == 0) {
+        alert("Confirm password is empty");
+        return false;
+      } else if (confirm != password) {
+        alert("Password does not match");
+        return false;
+      } else {
+        document.getElementById("myForm").submit();
+        alert("Sign up successfully");
+      }
+    }
+
+    var counter = 1;
+    setInterval(function () {
+      document.getElementById("radio" + counter).checked = true;
+      counter++;
+      if (counter > 4) {
+        counter = 1;
+      }
+    }, 5000);
+  </script>
+</html>
